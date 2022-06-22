@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart' hide Border;
 import 'package:primer/src/colors.dart';
+import 'package:primer/src/text_styles.dart';
 
 class PrimerTheme extends StatelessWidget {
   const PrimerTheme({
@@ -57,6 +58,7 @@ class PrimerThemeData with Diagnosticable {
     Closed? closed,
     Done? done,
     Sponsors? sponsors,
+    PrimerTypography? typography,
   }) {
     // ignore: no_leading_underscores_for_local_identifiers
     final _brightness = brightness ?? Brightness.light;
@@ -75,6 +77,7 @@ class PrimerThemeData with Diagnosticable {
     closed ??= isDark ? Closed.dark() : const Closed();
     done ??= isDark ? Done.dark() : const Done();
     sponsors ??= isDark ? Sponsors.dark() : const Sponsors();
+    typography ??= isDark ? PrimerTypography.dark() : PrimerTypography.light();
 
     return PrimerThemeData.raw(
       brightness: _brightness,
@@ -91,6 +94,7 @@ class PrimerThemeData with Diagnosticable {
       closed: closed,
       done: done,
       sponsors: sponsors,
+      typography: typography,
     );
   }
 
@@ -109,6 +113,7 @@ class PrimerThemeData with Diagnosticable {
     required this.closed,
     required this.done,
     required this.sponsors,
+    required this.typography,
   });
 
   factory PrimerThemeData.light() => PrimerThemeData(
@@ -120,6 +125,8 @@ class PrimerThemeData with Diagnosticable {
       );
 
   factory PrimerThemeData.fallback() => PrimerThemeData.light();
+
+  bool get isDark => brightness == Brightness.dark;
 
   final Brightness brightness;
   final Foreground foreground;
@@ -135,4 +142,5 @@ class PrimerThemeData with Diagnosticable {
   final Closed closed;
   final Done done;
   final Sponsors sponsors;
+  final PrimerTypography typography;
 }

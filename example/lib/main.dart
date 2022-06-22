@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData(
         brightness: Brightness.dark,
       ),
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.dark,
       home: const MyHomePage(title: 'Primer Demo Home Page'),
     );
   }
@@ -57,9 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(
           widget.title,
-          style: TextStyle(
-            color: primerTheme.foreground.dflt,
-          ),
+          style: primerTheme.typography.h2,
         ),
         backgroundColor: primerTheme.canvas.dflt,
         elevation: 0,
@@ -70,15 +68,11 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Text(
               'You have pushed the button this many times:',
-              style: TextStyle(
-                color: primerTheme.foreground.dflt,
-              ),
+              style: primerTheme.typography.emphasized,
             ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headline4?.copyWith(
-                    color: primerTheme.foreground.dflt,
-                  ),
+              style: primerTheme.typography.h1,
             ),
           ],
         ),
