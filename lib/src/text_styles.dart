@@ -2,19 +2,21 @@ import 'package:flutter/painting.dart';
 
 class PrimerTypography {
   const PrimerTypography({
-    this.normal = const TextStyle(
-      letterSpacing: -0.15,
-    ),
+    this.normal = const TextStyle(),
     this.italic = const TextStyle(
       fontStyle: FontStyle.italic,
     ),
     this.bold = const TextStyle(
       fontWeight: FontWeight.w600,
-      letterSpacing: -0.15,
+    ),
+    this.semiBold = const TextStyle(
+      fontWeight: FontWeight.w500,
+    ),
+    this.light = const TextStyle(
+      fontWeight: FontWeight.w300,
     ),
     this.underline = const TextStyle(
       decoration: TextDecoration.underline,
-      letterSpacing: -0.15,
     ),
     this.emphasized = const TextStyle(
       fontWeight: FontWeight.w600,
@@ -33,22 +35,18 @@ class PrimerTypography {
     this.mono = const TextStyle(
       fontFamily: 'monospace',
       fontSize: 12.0,
-      letterSpacing: -0.3,
     ),
     this.h1 = const TextStyle(
       fontSize: 32.0,
       fontWeight: FontWeight.w600,
-      letterSpacing: 0.4,
     ),
     this.h2 = const TextStyle(
       fontSize: 24.0,
       fontWeight: FontWeight.w600,
-      letterSpacing: 0.3,
     ),
     this.h3 = const TextStyle(
       fontSize: 20.0,
       fontWeight: FontWeight.w600,
-      letterSpacing: 0.3,
     ),
     this.h4 = const TextStyle(
       fontSize: 16.0,
@@ -76,6 +74,8 @@ class PrimerTypography {
   final TextStyle normal;
   final TextStyle italic;
   final TextStyle bold;
+  final TextStyle semiBold;
+  final TextStyle light;
   final TextStyle underline;
   final TextStyle emphasized;
   final TextStyle small;
@@ -114,10 +114,11 @@ class PrimerTypography {
   }
 
   PrimerTypography copyWith({
-    Color? color,
     TextStyle? normal,
     TextStyle? italic,
     TextStyle? bold,
+    TextStyle? semiBold,
+    TextStyle? light,
     TextStyle? underline,
     TextStyle? emphasized,
     TextStyle? small,
@@ -135,6 +136,8 @@ class PrimerTypography {
       normal: normal ?? this.normal,
       italic: italic ?? this.italic,
       bold: bold ?? this.bold,
+      semiBold: semiBold ?? this.semiBold,
+      light: light ?? this.light,
       underline: underline ?? this.underline,
       emphasized: emphasized ?? this.emphasized,
       small: small ?? this.small,
@@ -158,6 +161,8 @@ class PrimerTypography {
     return copyWith(
       normal: other.normal,
       italic: other.italic,
+      semiBold: other.semiBold,
+      light: other.light,
       bold: other.bold,
       underline: other.underline,
       emphasized: other.emphasized,
@@ -180,6 +185,8 @@ class PrimerTypography {
       normal: typography.normal.apply(color: color),
       italic: typography.italic.apply(color: color),
       bold: typography.bold.apply(color: color),
+      semiBold: typography.semiBold.apply(color: color),
+      light: typography.light.apply(color: color),
       underline: typography.underline.apply(color: color),
       emphasized: typography.emphasized.apply(color: color),
       small: typography.small.apply(color: color),
@@ -203,6 +210,8 @@ class PrimerTypography {
           normal == other.normal &&
           italic == other.italic &&
           bold == other.bold &&
+          semiBold == other.semiBold &&
+          light == other.light &&
           underline == other.underline &&
           emphasized == other.emphasized &&
           small == other.small &&
@@ -221,6 +230,8 @@ class PrimerTypography {
       normal.hashCode ^
       italic.hashCode ^
       bold.hashCode ^
+      semiBold.hashCode ^
+      light.hashCode ^
       underline.hashCode ^
       emphasized.hashCode ^
       small.hashCode ^
@@ -236,6 +247,6 @@ class PrimerTypography {
 
   @override
   String toString() {
-    return 'PrimerTypography{normal: $normal, italic: $italic, bold: $bold, underline: $underline, emphasized: $emphasized, small: $small, smallBold: $smallBold, lead: $lead, mono: $mono, h1: $h1, h2: $h2, h3: $h3, h4: $h4, h5: $h5, h6: $h6}';
+    return 'PrimerTypography{normal: $normal, italic: $italic, bold: $bold, semiBold: $semiBold, light: $light, underline: $underline, emphasized: $emphasized, small: $small, smallBold: $smallBold, lead: $lead, mono: $mono, h1: $h1, h2: $h2, h3: $h3, h4: $h4, h5: $h5, h6: $h6}';
   }
 }

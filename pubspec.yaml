@@ -1,6 +1,6 @@
 name: primer
 description: A Flutter theme consistent with Primer style guidelines
-version: 0.2.0
+version: 0.2.1
 homepage: https://github.com/GroovinChip/primer
 
 environment:

@@ -1,3 +1,7 @@
+## 0.2.1
+* Added `semiBold` and `light` text styles
+* Removed `letterSpacing` from text styles
+
 ## 0.2.0
 * Added `PrimerTypography`
 
