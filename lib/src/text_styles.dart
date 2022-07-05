@@ -1,6 +1,15 @@
 import 'package:flutter/painting.dart';
+import 'package:primer/primer.dart';
 
+/// {@template primerTypography}
+/// A set of text styles that match Primer's typographic specifications.
+///
+/// It is not necessary to use this class directly. Instead, use the
+/// [PrimerThemeData.typography] built into [PrimerThemeData] in conjunction
+/// with the [PrimerTheme] InheritedWidget.
+/// {@endtemplate}
 class PrimerTypography {
+  /// {@macro primerTypography}
   const PrimerTypography({
     this.normal = const TextStyle(),
     this.italic = const TextStyle(
@@ -62,13 +71,13 @@ class PrimerTypography {
   });
 
   factory PrimerTypography.light({Color? color}) {
-    const textColor = Color(0xff24292f);
-    return _applyTextColor(const PrimerTypography(), color ?? textColor);
+    return _applyTextColor(
+        const PrimerTypography(), color ?? ScaleColors.gray9);
   }
 
   factory PrimerTypography.dark({Color? color}) {
-    const textColor = Color(0xffc9d1d9);
-    return _applyTextColor(const PrimerTypography(), color ?? textColor);
+    return _applyTextColor(
+        const PrimerTypography(), color ?? ScaleColors.gray1);
   }
 
   final TextStyle normal;

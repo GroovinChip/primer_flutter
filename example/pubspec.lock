@@ -90,6 +90,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.1"
+  flutter_syntax_view:
+    dependency: "direct main"
+    description:
+      name: flutter_syntax_view
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.0.0"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -220,7 +227,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.2.1"
+    version: "0.3.0"
   process:
     dependency: transitive
     description:

@@ -14,6 +14,7 @@ dependencies:
   primer:
     path: ../
   google_fonts: ^3.0.1
+  flutter_syntax_view: ^4.0.0
 
 dev_dependencies:
   flutter_test:
