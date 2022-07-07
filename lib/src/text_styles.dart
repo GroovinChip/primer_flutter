@@ -80,24 +80,66 @@ class PrimerTypography {
         const PrimerTypography(), color ?? ScaleColors.gray1);
   }
 
+  /// A plain, unmodified [TextStyle].
   final TextStyle normal;
+
+  /// A [TextStyle] with a fontStyle of [FontStyle.italic].
   final TextStyle italic;
+
+  /// A [TextStyle] with a fontWeight of [FontWeight.w600].
   final TextStyle bold;
+
+  /// A [TextStyle] with a fontWeight of [FontWeight.w500].
   final TextStyle semiBold;
+
+  /// A [TextStyle] with a fontWeight of [FontWeight.w300].
   final TextStyle light;
+
+  /// A [TextStyle] with a decoration of [TextDecoration.underline].
   final TextStyle underline;
+
+  /// A [TextStyle] with a fontWeight of [FontWeight.w600].
   final TextStyle emphasized;
+
+  /// A [TextStyle] with a fontSize of `12.0`.
   final TextStyle small;
+
+  /// A [TextStyle] with a fontWeight of [FontWeight.w600] and a fontSize of
+  /// `12.0`.
   final TextStyle smallBold;
+
+  /// A [TextStyle] with a fontSize of `20.0` and a fontWeight of
+  /// [FontWeight.w300].
   final TextStyle lead;
+
+  /// A [TextStyle] with a fontFamily of `monospace` and a fontSize of `12.0`.
   final TextStyle mono;
+
+  /// A [TextStyle] with a fontSize of `32.0` and a fontWeight of
+  /// [FontWeight.w600].
   final TextStyle h1;
+
+  /// A [TextStyle] with a fontSize of `24.0` and a fontWeight of
+  /// [FontWeight.w600].
   final TextStyle h2;
+
+  /// A [TextStyle] with a fontSize of `20.0` and a fontWeight of
+  /// [FontWeight.w600].
   final TextStyle h3;
+
+  /// A [TextStyle] with a fontSize of `16.0` and a fontWeight of
+  /// [FontWeight.w600].
   final TextStyle h4;
+
+  /// A [TextStyle] with a default fontSize and a fontWeight of
+  /// [FontWeight.w600].
   final TextStyle h5;
+
+  /// A [TextStyle] with a fontSize of `12.0` and a fontWeight of
+  /// [FontWeight.w600].
   final TextStyle h6;
 
+  /// Applies shadows to the given [style] according to Primer guidelines.
   TextStyle withShadow({
     required TextStyle style,
     required Color backgroundColor,
@@ -122,6 +164,8 @@ class PrimerTypography {
           );
   }
 
+  /// Copies this [PrimerTypography] into another and applies the given values,
+  /// if specified.
   PrimerTypography copyWith({
     TextStyle? normal,
     TextStyle? italic,
@@ -162,6 +206,7 @@ class PrimerTypography {
     );
   }
 
+  /// Merges one [PrimerTypography] into another.
   PrimerTypography merge(PrimerTypography? other) {
     if (other == null) {
       return this;
