@@ -11,4 +11,5 @@ DISCLAIMER: This project is not affiliated with the Primer or GitHub organizatio
   - [x] Lighten
 - [x] `PrimerTheme` and `PrimerThemeData` classes
 - [x] Typography class
-- [ ] Dartdocs
+- [x] Dartdocs
+- [ ] Usage section & details in readme
