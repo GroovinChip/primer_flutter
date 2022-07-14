@@ -9,6 +9,9 @@ DISCLAIMER: This project is not affiliated with the Primer or GitHub organizatio
 
 ✨ `PrimerTheme` InheritedWidget which provides the `PrimerThemeData` to descendant widgets
 
+✨ `PrimerApp` convenience widget that provides automatic Primer theme configurations based on the `Brightness` it 
+is provided with.
+
 ## Installation
 This package is **not** yet available on pub.dev. To use it in your app, depend on it in your `pubspec.yaml` like so:
 ```yaml
@@ -25,10 +28,8 @@ MaterialApp( // or other "app" entrypoint widget that has a builder property
   darkTheme: ThemeData.dark(),
   themeMode: ThemeMode.system,
   builder: (context, child) {
-    return PrimerTheme(
-      data: Theme.of(context).brightness == Brightness.light
-        ? PrimerThemeData.light()
-        : PrimerThemeData.dark(),
+    return PrimerApp(
+      parentBrightness: Theme.of(context).brightness,
       child: child!,
     );  
   },
@@ -57,6 +58,3 @@ class MyHomePage extends StatelessWidget {
   }
 }
 ```
-
-## Features under consideration
-💡 Flutter widgets that are styled according to Primer guidelines

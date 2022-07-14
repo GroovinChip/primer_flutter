@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart' hide Border;
 import 'package:primer/src/colors/functional_colors.dart';
-import 'package:primer/src/text_styles.dart';
+import 'package:primer/src/theme/text_styles.dart';
 
 /// {@template primerTheme}
 /// Applies a Primer-style theme to descendant widgets.
@@ -15,8 +15,10 @@ import 'package:primer/src/text_styles.dart';
 /// See also:
 ///
 ///  * [PrimerThemeData], which specifies the theme's visual styling
+///  * [PrimerApp], a high-level widget which creates a [PrimerThemeData]
+///  based on the current brightness of an app.
 /// {@endtemplate}
-class PrimerTheme extends StatelessWidget {
+class PrimerTheme extends StatelessWidget with Diagnosticable {
   /// {@macro primerTheme}
   const PrimerTheme({
     super.key,
@@ -49,6 +51,12 @@ class PrimerTheme extends StatelessWidget {
       theme: this,
       child: child,
     );
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty<PrimerThemeData>('data', data));
   }
 }
 

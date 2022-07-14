@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/painting.dart';
 import 'package:primer/primer.dart';
 
@@ -8,7 +9,7 @@ import 'package:primer/primer.dart';
 /// [PrimerThemeData.typography] built into [PrimerThemeData] in conjunction
 /// with the [PrimerTheme] InheritedWidget.
 /// {@endtemplate}
-class PrimerTypography {
+class PrimerTypography with Diagnosticable {
   /// {@macro primerTypography}
   const PrimerTypography({
     this.normal = const TextStyle(),
@@ -76,9 +77,12 @@ class PrimerTypography {
   }
 
   factory PrimerTypography.dark({Color? color}) {
+    _isDark = true;
     return _applyTextColor(
         const PrimerTypography(), color ?? ScaleColors.gray1);
   }
+
+  static bool _isDark = false;
 
   /// A plain, unmodified [TextStyle].
   final TextStyle normal;
@@ -234,7 +238,9 @@ class PrimerTypography {
   }
 
   static PrimerTypography _applyTextColor(
-      PrimerTypography typography, Color color) {
+    PrimerTypography typography,
+    Color color,
+  ) {
     return PrimerTypography(
       normal: typography.normal.apply(color: color),
       italic: typography.italic.apply(color: color),
@@ -300,7 +306,8 @@ class PrimerTypography {
       h6.hashCode;
 
   @override
-  String toString() {
-    return 'PrimerTypography{normal: $normal, italic: $italic, bold: $bold, semiBold: $semiBold, light: $light, underline: $underline, emphasized: $emphasized, small: $small, smallBold: $smallBold, lead: $lead, mono: $mono, h1: $h1, h2: $h2, h3: $h3, h4: $h4, h5: $h5, h6: $h6}';
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty<bool>('isDark', _isDark));
   }
 }

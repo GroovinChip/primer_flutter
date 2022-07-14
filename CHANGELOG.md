@@ -1,3 +1,6 @@
+## 0.4.0
+* Added `PrimerApp` widget
+
 ## 0.3.0
 * Added scale colors with `lighten` utility
 * Added `.light()` factory constructors to many functional
