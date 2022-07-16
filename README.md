@@ -58,3 +58,9 @@ class MyHomePage extends StatelessWidget {
   }
 }
 ```
+---
+TODO:
+- [ ] High-contrast themes
+- [ ] Colorblind themes
+- [ ] Tritanopia themes
+- [ ] Dimmed theme (dark only)
