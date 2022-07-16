@@ -231,6 +231,7 @@ class MyHomePage extends StatelessWidget {
                 [
                   const Text(
                       'You can use the colors below in the following ways:'),
+                  const SizedBox(height: 8),
                   Row(
                     children: [
                       SyntaxView(
@@ -245,6 +246,7 @@ Attention.dark().foreground;''',
                         syntax: Syntax.DART,
                         syntaxTheme: SyntaxTheme.vscodeDark(),
                         withZoom: false,
+                        fontSize: 14.0,
                       ),
                     ],
                   ),
@@ -685,13 +687,16 @@ class ColorCell extends StatelessWidget {
   Widget build(BuildContext context) {
     final primerTheme = PrimerTheme.of(context);
     Color labelColor = color.computeLuminance() > 0.5
-        ? PrimerThemeData.light().foreground.dflt
-        : PrimerThemeData.dark().foreground.dflt;
+        ? Colors.black
+        : Colors.white;
     return SizedBox(
       height: 70,
       width: 150,
-      child: ColoredBox(
-        color: color,
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: BorderRadius.circular(6),
+        ),
         child: Center(
           child: Text(
             label,

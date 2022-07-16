@@ -1,3 +1,6 @@
+## 0.5.0
+* Update scale colors with proper light/dark variants
+
 ## 0.4.0
 * Added `PrimerApp` widget
 

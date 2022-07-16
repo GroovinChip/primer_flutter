@@ -12,19 +12,19 @@ import 'package:primer/primer.dart';
 class Foreground with Diagnosticable {
   /// {@macro foreground}
   const Foreground({
-    this.dflt = ScaleColors.gray9,
-    this.muted = ScaleColors.gray6,
-    this.subtle = ScaleColors.gray5,
-    this.onEmphasis = ScaleColors.white,
+    this.dflt = ScaleColorsLight.gray9,
+    this.muted = ScaleColorsLight.gray6,
+    this.subtle = ScaleColorsLight.gray5,
+    this.onEmphasis = ScaleColorsLight.white,
   });
 
   /// The dark variant of [Foreground].
   factory Foreground.dark() {
     return const Foreground(
-      dflt: ScaleColors.gray1,
-      muted: ScaleColors.gray3,
-      subtle: ScaleColors.gray4,
-      onEmphasis: ScaleColors.white,
+      dflt: ScaleColorsDark.gray1,
+      muted: ScaleColorsDark.gray3,
+      subtle: ScaleColorsDark.gray4,
+      onEmphasis: ScaleColorsDark.white,
     );
   }
 
@@ -63,19 +63,19 @@ class Foreground with Diagnosticable {
 class Canvas with Diagnosticable {
   /// {@macro canvas}
   const Canvas({
-    this.dflt = ScaleColors.white,
-    this.overlay = ScaleColors.white,
-    this.inset = ScaleColors.gray0,
-    this.subtle = ScaleColors.gray0,
+    this.dflt = ScaleColorsLight.white,
+    this.overlay = ScaleColorsLight.white,
+    this.inset = ScaleColorsLight.gray0,
+    this.subtle = ScaleColorsLight.gray0,
   });
 
   /// The dark variant of [Canvas].
   factory Canvas.dark() {
     return const Canvas(
-      dflt: ScaleColors.gray9,
-      overlay: ScaleColors.gray8,
-      inset: ScaleColors.black,
-      subtle: ScaleColors.gray8,
+      dflt: ScaleColorsDark.gray9,
+      overlay: ScaleColorsDark.gray8,
+      inset: ScaleColorsDark.black,
+      subtle: ScaleColorsDark.gray8,
     );
   }
 
@@ -119,18 +119,18 @@ class Border with Diagnosticable {
   /// The light variant of [Border].
   factory Border.light() {
     return Border(
-      dflt: ScaleColors.gray2,
-      muted: ScaleColors.lighten(ScaleColors.gray2, 0.03),
-      subtle: ScaleColors.black.withOpacity(0.15),
+      dflt: ScaleColorsLight.gray2,
+      muted: lighten(ScaleColorsLight.gray2, 0.03),
+      subtle: ScaleColorsLight.black.withOpacity(0.15),
     );
   }
 
   /// The dark variant for [Border].
   factory Border.dark() {
     return Border(
-      dflt: ScaleColors.gray6,
-      muted: ScaleColors.gray7,
-      subtle: ScaleColors.gray0.withOpacity(0.1),
+      dflt: ScaleColorsDark.gray6,
+      muted: ScaleColorsDark.gray7,
+      subtle: ScaleColorsDark.gray0.withOpacity(0.1),
     );
   }
 
@@ -162,29 +162,29 @@ class Border with Diagnosticable {
 class Neutral with Diagnosticable {
   /// {@macro neutral}
   const Neutral({
-    this.emphasisPlus = ScaleColors.gray9,
-    this.emphasis = ScaleColors.gray5,
-    this.muted = const Color(0x33afb8c1),
-    this.subtle = const Color(0x80eaeef2),
+    required this.emphasisPlus,
+    required this.emphasis,
+    required this.muted,
+    required this.subtle,
   });
 
   /// The light variant of [Neutral].
   factory Neutral.light() {
     return Neutral(
-      emphasisPlus: ScaleColors.gray9,
-      emphasis: ScaleColors.gray5,
-      muted: ScaleColors.gray3.withOpacity(0.2),
-      subtle: ScaleColors.gray1.withOpacity(0.5),
+      emphasisPlus: ScaleColorsLight.gray9,
+      emphasis: ScaleColorsLight.gray5,
+      muted: ScaleColorsLight.gray3.withOpacity(0.2),
+      subtle: ScaleColorsLight.gray1.withOpacity(0.5),
     );
   }
 
   /// The dark variant of [Neutral].
   factory Neutral.dark() {
     return Neutral(
-      emphasisPlus: ScaleColors.gray4,
-      emphasis: ScaleColors.gray4,
-      muted: ScaleColors.gray4.withOpacity(0.4),
-      subtle: ScaleColors.gray4.withOpacity(0.1),
+      emphasisPlus: ScaleColorsDark.gray4,
+      emphasis: ScaleColorsDark.gray4,
+      muted: ScaleColorsDark.gray4.withOpacity(0.4),
+      subtle: ScaleColorsDark.gray4.withOpacity(0.1),
     );
   }
 
@@ -212,19 +212,19 @@ class Neutral with Diagnosticable {
 class Accent with Diagnosticable {
   /// {@macro accent}
   const Accent({
-    this.foreground = ScaleColors.blue5,
-    this.emphasis = ScaleColors.blue5,
-    this.muted = ScaleColors.blue3,
-    this.subtle = ScaleColors.blue0,
+    this.foreground = ScaleColorsLight.blue5,
+    this.emphasis = ScaleColorsLight.blue5,
+    this.muted = ScaleColorsLight.blue3,
+    this.subtle = ScaleColorsLight.blue0,
   });
 
   /// The dark variant of [Accent].
   factory Accent.dark() {
     return Accent(
-      foreground: ScaleColors.blue3,
-      emphasis: ScaleColors.blue5,
-      muted: ScaleColors.blue4.withOpacity(0.4),
-      subtle: ScaleColors.blue4.withOpacity(0.15),
+      foreground: ScaleColorsDark.blue3,
+      emphasis: ScaleColorsDark.blue5,
+      muted: ScaleColorsDark.blue4.withOpacity(0.4),
+      subtle: ScaleColorsDark.blue4.withOpacity(0.15),
     );
   }
 
@@ -265,20 +265,20 @@ class Success with Diagnosticable {
   /// The light variant of [Success].
   factory Success.light() {
     return Success(
-      foreground: ScaleColors.green5,
-      emphasis: ScaleColors.green4,
-      muted: ScaleColors.green3.withOpacity(0.4),
-      subtle: ScaleColors.green0,
+      foreground: ScaleColorsLight.green5,
+      emphasis: ScaleColorsLight.green4,
+      muted: ScaleColorsLight.green3.withOpacity(0.4),
+      subtle: ScaleColorsLight.green0,
     );
   }
 
   /// The dark variant of [Success].
   factory Success.dark() {
     return Success(
-      foreground: ScaleColors.green3,
-      emphasis: ScaleColors.green5,
-      muted: ScaleColors.green4.withOpacity(0.4),
-      subtle: ScaleColors.green4.withOpacity(0.15),
+      foreground: ScaleColorsDark.green3,
+      emphasis: ScaleColorsDark.green5,
+      muted: ScaleColorsDark.green4.withOpacity(0.4),
+      subtle: ScaleColorsDark.green4.withOpacity(0.15),
     );
   }
 
@@ -319,20 +319,20 @@ class Attention with Diagnosticable {
   /// The light variant of [Attention].
   factory Attention.light() {
     return Attention(
-      foreground: ScaleColors.yellow5,
-      emphasis: ScaleColors.yellow4,
-      muted: ScaleColors.yellow3.withOpacity(0.4),
-      subtle: ScaleColors.yellow0,
+      foreground: ScaleColorsLight.yellow5,
+      emphasis: ScaleColorsLight.yellow4,
+      muted: ScaleColorsLight.yellow3.withOpacity(0.4),
+      subtle: ScaleColorsLight.yellow0,
     );
   }
 
   /// The dark variant of [Attention].
   factory Attention.dark() {
     return Attention(
-      foreground: ScaleColors.yellow3,
-      emphasis: ScaleColors.yellow5,
-      muted: ScaleColors.yellow4.withOpacity(0.4),
-      subtle: ScaleColors.yellow3.withOpacity(0.15),
+      foreground: ScaleColorsDark.yellow3,
+      emphasis: ScaleColorsDark.yellow5,
+      muted: ScaleColorsDark.yellow4.withOpacity(0.4),
+      subtle: ScaleColorsDark.yellow3.withOpacity(0.15),
     );
   }
 
@@ -374,20 +374,20 @@ class Severe with Diagnosticable {
   /// The light variant of [Severe].
   factory Severe.light() {
     return Severe(
-      foreground: ScaleColors.orange5,
-      emphasis: ScaleColors.orange4,
-      muted: ScaleColors.orange3.withOpacity(0.4),
-      subtle: ScaleColors.orange0,
+      foreground: ScaleColorsLight.orange5,
+      emphasis: ScaleColorsLight.orange4,
+      muted: ScaleColorsLight.orange3.withOpacity(0.4),
+      subtle: ScaleColorsLight.orange0,
     );
   }
 
   /// The dark variant of [Severe].
   factory Severe.dark() {
     return Severe(
-      foreground: ScaleColors.orange4,
-      emphasis: ScaleColors.orange5,
-      muted: ScaleColors.orange4.withOpacity(0.4),
-      subtle: ScaleColors.orange4.withOpacity(0.15),
+      foreground: ScaleColorsDark.orange4,
+      emphasis: ScaleColorsDark.orange5,
+      muted: ScaleColorsDark.orange4.withOpacity(0.4),
+      subtle: ScaleColorsDark.orange4.withOpacity(0.15),
     );
   }
 
@@ -428,20 +428,20 @@ class Danger with Diagnosticable {
   /// The light variant of [Danger].
   factory Danger.light() {
     return Danger(
-      foreground: ScaleColors.red5,
-      emphasis: ScaleColors.red5,
-      muted: ScaleColors.red3.withOpacity(0.4),
-      subtle: ScaleColors.red0,
+      foreground: ScaleColorsLight.red5,
+      emphasis: ScaleColorsLight.red5,
+      muted: ScaleColorsLight.red3.withOpacity(0.4),
+      subtle: ScaleColorsLight.red0,
     );
   }
 
   /// The dark variant of [Danger].
   factory Danger.dark() {
     return Danger(
-      foreground: ScaleColors.red4,
-      emphasis: ScaleColors.red5,
-      muted: ScaleColors.red4.withOpacity(0.4),
-      subtle: ScaleColors.red4.withOpacity(0.15),
+      foreground: ScaleColorsDark.red4,
+      emphasis: ScaleColorsDark.red5,
+      muted: ScaleColorsDark.red4.withOpacity(0.4),
+      subtle: ScaleColorsDark.red4.withOpacity(0.15),
     );
   }
 
@@ -480,20 +480,20 @@ class Open with Diagnosticable {
   /// The light variant of [Open].
   factory Open.light() {
     return Open(
-      foreground: ScaleColors.green5,
-      emphasis: ScaleColors.green4,
-      muted: ScaleColors.green3.withOpacity(0.4),
-      subtle: ScaleColors.green0,
+      foreground: ScaleColorsLight.green5,
+      emphasis: ScaleColorsLight.green4,
+      muted: ScaleColorsLight.green3.withOpacity(0.4),
+      subtle: ScaleColorsLight.green0,
     );
   }
 
   /// The dark variant of [Open].
   factory Open.dark() {
     return Open(
-      foreground: ScaleColors.green3,
-      emphasis: ScaleColors.green5,
-      muted: ScaleColors.green4.withOpacity(0.4),
-      subtle: ScaleColors.green4.withOpacity(0.15),
+      foreground: ScaleColorsDark.green3,
+      emphasis: ScaleColorsDark.green5,
+      muted: ScaleColorsDark.green4.withOpacity(0.4),
+      subtle: ScaleColorsDark.green4.withOpacity(0.15),
     );
   }
 
@@ -532,20 +532,20 @@ class Closed with Diagnosticable {
   /// The light variant of [Closed].
   factory Closed.light() {
     return Closed(
-      foreground: ScaleColors.red5,
-      emphasis: ScaleColors.red5,
-      muted: ScaleColors.red3.withOpacity(0.4),
-      subtle: ScaleColors.red0,
+      foreground: ScaleColorsLight.red5,
+      emphasis: ScaleColorsLight.red5,
+      muted: ScaleColorsLight.red3.withOpacity(0.4),
+      subtle: ScaleColorsLight.red0,
     );
   }
 
   /// The dark variant of [Closed].
   factory Closed.dark() {
     return Closed(
-      foreground: ScaleColors.red4,
-      emphasis: ScaleColors.red5,
-      muted: ScaleColors.red4.withOpacity(0.4),
-      subtle: ScaleColors.red4.withOpacity(0.15),
+      foreground: ScaleColorsDark.red4,
+      emphasis: ScaleColorsDark.red5,
+      muted: ScaleColorsDark.red4.withOpacity(0.4),
+      subtle: ScaleColorsDark.red4.withOpacity(0.15),
     );
   }
 
@@ -584,20 +584,20 @@ class Done with Diagnosticable {
   /// The light variant of [Done].
   factory Done.light() {
     return Done(
-      foreground: ScaleColors.purple5,
-      emphasis: ScaleColors.purple5,
-      muted: ScaleColors.purple3.withOpacity(0.4),
-      subtle: ScaleColors.purple0,
+      foreground: ScaleColorsLight.purple5,
+      emphasis: ScaleColorsLight.purple5,
+      muted: ScaleColorsLight.purple3.withOpacity(0.4),
+      subtle: ScaleColorsLight.purple0,
     );
   }
 
   /// The dark variant of [Done].
   factory Done.dark() {
     return Done(
-      foreground: ScaleColors.purple4,
-      emphasis: ScaleColors.purple5,
-      muted: ScaleColors.purple4.withOpacity(0.4),
-      subtle: ScaleColors.purple4.withOpacity(0.15),
+      foreground: ScaleColorsDark.purple4,
+      emphasis: ScaleColorsDark.purple5,
+      muted: ScaleColorsDark.purple4.withOpacity(0.4),
+      subtle: ScaleColorsDark.purple4.withOpacity(0.15),
     );
   }
 
@@ -636,20 +636,20 @@ class Sponsors with Diagnosticable {
   /// The light variant of [Sponsors].
   factory Sponsors.light() {
     return Sponsors(
-      foreground: ScaleColors.pink5,
-      emphasis: ScaleColors.pink5,
-      muted: ScaleColors.pink3.withOpacity(0.4),
-      subtle: ScaleColors.pink0,
+      foreground: ScaleColorsLight.pink5,
+      emphasis: ScaleColorsLight.pink5,
+      muted: ScaleColorsLight.pink3.withOpacity(0.4),
+      subtle: ScaleColorsLight.pink0,
     );
   }
 
   /// The dark variant of [Sponsors].
   factory Sponsors.dark() {
     return Sponsors(
-      foreground: ScaleColors.pink4,
-      emphasis: ScaleColors.pink5,
-      muted: ScaleColors.pink4.withOpacity(0.4),
-      subtle: ScaleColors.pink4.withOpacity(0.15),
+      foreground: ScaleColorsDark.pink4,
+      emphasis: ScaleColorsDark.pink5,
+      muted: ScaleColorsDark.pink4.withOpacity(0.4),
+      subtle: ScaleColorsDark.pink4.withOpacity(0.15),
     );
   }
 

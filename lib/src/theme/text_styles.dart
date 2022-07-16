@@ -73,13 +73,13 @@ class PrimerTypography with Diagnosticable {
 
   factory PrimerTypography.light({Color? color}) {
     return _applyTextColor(
-        const PrimerTypography(), color ?? ScaleColors.gray9);
+        const PrimerTypography(), color ?? ScaleColorsLight.gray9);
   }
 
   factory PrimerTypography.dark({Color? color}) {
     _isDark = true;
     return _applyTextColor(
-        const PrimerTypography(), color ?? ScaleColors.gray1);
+        const PrimerTypography(), color ?? ScaleColorsDark.gray1);
   }
 
   static bool _isDark = false;
