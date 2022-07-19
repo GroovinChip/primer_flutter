@@ -2,8 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart' hide Border;
-import 'package:primer/src/colors/functional_colors.dart';
-import 'package:primer/src/theme/text_styles.dart';
+import 'package:primer_flutter/src/colors/functional_colors.dart';
+import 'package:primer_flutter/src/theme/text_styles.dart';
 
 /// {@template primerTheme}
 /// Applies a Primer-style theme to descendant widgets.

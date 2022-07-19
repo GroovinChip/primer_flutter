@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/painting.dart';
-import 'package:primer/primer.dart';
+import 'package:primer_flutter/primer_flutter.dart';
 
 /// {@template foreground}
 /// The primary color for text and icons in any given interface.

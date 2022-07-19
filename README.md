@@ -1,4 +1,4 @@
-# primer
+# primer_flutter
 
 Flutter themes consistent with [Primer](https://primer.style) style guidelines
 
@@ -14,12 +14,12 @@ DISCLAIMER: This project is not affiliated with the Primer or GitHub organizatio
 ## Installation Options
 1. From pub.dev:
 ```shell
-$ flutter pub add primer
+$ flutter pub add primer_flutter
 ```
 2. From Git:
 ```yaml
 primer:
-  git: https://github.com/GroovinChip/primer.git
+  git: https://github.com/GroovinChip/primer_flutter.git
 ```
 
 ## Quick Start

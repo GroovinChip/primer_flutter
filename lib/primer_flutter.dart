@@ -1,4 +1,4 @@
-library primer;
+library primer_flutter;
 
 export 'src/colors/functional_colors.dart';
 export 'src/colors/scale_colors.dart';

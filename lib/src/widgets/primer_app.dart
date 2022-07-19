@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/widgets.dart';
-import 'package:primer/primer.dart';
+import 'package:primer_flutter/primer_flutter.dart';
 
 /// Enumerates the types of accessibility themes that can be used in a
 /// [PrimerApp].

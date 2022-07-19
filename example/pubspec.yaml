@@ -11,7 +11,7 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.5
-  primer:
+  primer_flutter:
     path: ../
   google_fonts: ^3.0.1
   flutter_syntax_view: ^4.0.0

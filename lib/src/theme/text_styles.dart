@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/painting.dart';
-import 'package:primer/primer.dart';
+import 'package:primer_flutter/primer_flutter.dart';
 
 /// {@template primerTypography}
 /// A set of text styles that match Primer's typographic specifications.

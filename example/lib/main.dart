@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_syntax_view/flutter_syntax_view.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:primer/primer.dart' hide Border;
+import 'package:primer_flutter/primer_flutter.dart' hide Border;
 
 void main() {
   runApp(const MyApp());
