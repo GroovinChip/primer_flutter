@@ -3,6 +3,16 @@ import 'dart:ui';
 import 'package:flutter/widgets.dart';
 import 'package:primer/primer.dart';
 
+/// Enumerates the types of accessibility themes that can be used in a
+/// [PrimerApp].
+enum AccessibilityTheme {
+  highContrast,
+  colorBlind,
+  tritanopia,
+  dimmed,
+  none,
+}
+
 /// {@template primerApp}
 /// A high-level convenience widget that provides automatic Primer theme
 /// configurations based on the [Brightness] it is provided with.
@@ -65,6 +75,13 @@ import 'package:primer/primer.dart';
 ///   }
 /// }
 /// ```
+///
+/// By default, [PrimerApp] will create standard light and dark themes. However,
+/// you can configure [PrimerApp] to create several other pre-configured,
+/// accessibility-friendly themes using the [accessibilityTheme] property.
+/// Please note that only one accessibility theme can be set at a time, and that
+/// if any accessibility theme other than [AccessibilityTheme.none] is set, that
+/// theme will replace the standard light and dark themes.
 /// {@endtemplate}
 class PrimerApp extends StatelessWidget {
   /// {@macro primerApp}
@@ -72,6 +89,7 @@ class PrimerApp extends StatelessWidget {
     Key? key,
     required this.child,
     required this.parentBrightness,
+    this.accessibilityTheme = AccessibilityTheme.none,
   }) : super(key: key);
 
   /// {@macro flutter.widgets.ProxyWidget.child}
@@ -82,12 +100,40 @@ class PrimerApp extends StatelessWidget {
   /// Used to determine the type of [PrimerThemeData] to create.
   final Brightness parentBrightness;
 
+  /// The accessibility theme to use.
+  ///
+  /// Defaults to [AccessibilityTheme.none].
+  final AccessibilityTheme accessibilityTheme;
+
+  bool get _isDark => parentBrightness == Brightness.dark;
+
   @override
   Widget build(BuildContext context) {
-    // Creates a PrimerThemeData based on the provided brightness.
-    final theme = parentBrightness == Brightness.dark
-        ? PrimerThemeData.dark()
-        : PrimerThemeData.light();
+    PrimerThemeData? theme;
+    switch (accessibilityTheme) {
+      case AccessibilityTheme.highContrast:
+        theme = _isDark
+            ? PrimerThemeData.highContrastDark()
+            : PrimerThemeData.highContrastLight();
+        break;
+      case AccessibilityTheme.colorBlind:
+        theme = _isDark
+            ? PrimerThemeData.darkColorblind()
+            : PrimerThemeData.lightColorblind();
+        break;
+      case AccessibilityTheme.tritanopia:
+        theme = _isDark
+            ? PrimerThemeData.darkTritanopia()
+            : PrimerThemeData.lightTritanopia();
+        break;
+      case AccessibilityTheme.dimmed:
+        theme = _isDark ? PrimerThemeData.dimmed() : PrimerThemeData.light();
+        break;
+      case AccessibilityTheme.none:
+        theme = _isDark ? PrimerThemeData.dark() : PrimerThemeData.light();
+        break;
+    }
+
     return PrimerTheme(
       data: theme,
       child: DefaultTextStyle(

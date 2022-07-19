@@ -14,12 +14,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Primer Demo',
-      builder: (context, child) {
-        return PrimerApp(
-          parentBrightness: Theme.of(context).brightness,
-          child: child!,
-        );
-      },
+      builder: (context, child) => PrimerApp(
+        parentBrightness: Theme.of(context).brightness,
+        child: child!,
+      ),
       theme: ThemeData.light(),
       darkTheme: ThemeData.dark(),
       themeMode: ThemeMode.dark,
@@ -686,9 +684,8 @@ class ColorCell extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final primerTheme = PrimerTheme.of(context);
-    Color labelColor = color.computeLuminance() > 0.5
-        ? Colors.black
-        : Colors.white;
+    Color labelColor =
+        color.computeLuminance() > 0.5 ? Colors.black : Colors.white;
     return SizedBox(
       height: 70,
       width: 150,

@@ -1,3 +1,7 @@
+## 1.0.0
+* Added accessibility themes
+* Full release
+
 ## 0.5.0
 * Update scale colors with proper light/dark variants
 

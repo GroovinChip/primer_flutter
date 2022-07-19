@@ -169,9 +169,142 @@ class PrimerThemeData with Diagnosticable {
       );
 
   /// Creates a [PrimerThemeData] that matches Primer's style guidelines for
+  /// high-contrast light themes.
+  factory PrimerThemeData.highContrastLight() => PrimerThemeData(
+        brightness: Brightness.light,
+        foreground: Foreground.lightHighContrast(),
+        canvas: Canvas.lightHighContrast(),
+        border: Border.lightHighContrast(),
+        neutral: Neutral.lightHighContrast(),
+        accent: Accent.lightHighContrast(),
+        success: Success.lightHighContrast(),
+        attention: Attention.lightHighContrast(),
+        severe: Severe.lightHighContrast(),
+        danger: Danger.lightHighContrast(),
+        open: Open.lightHighContrast(),
+        closed: Closed.lightHighContrast(),
+        done: Done.lightHighContrast(),
+        sponsors: Sponsors.lightHighContrast(),
+      );
+
+  /// Creates a [PrimerThemeData] that matches Primer's style guidelines for
+  /// colorblind-friendly light themes.
+  factory PrimerThemeData.lightColorblind() => PrimerThemeData(
+        brightness: Brightness.light,
+        foreground: Foreground.lightColorblind(),
+        canvas: Canvas.lightColorblind(),
+        border: Border.lightColorblind(),
+        neutral: Neutral.lightColorblind(),
+        accent: Accent.lightColorblind(),
+        success: Success.lightColorblind(),
+        attention: Attention.lightColorblind(),
+        severe: Severe.lightColorblind(),
+        danger: Danger.lightColorblind(),
+        open: Open.lightColorblind(),
+        closed: Closed.lightColorblind(),
+        done: Done.lightColorblind(),
+        sponsors: Sponsors.lightColorblind(),
+      );
+
+  /// Creates a [PrimerThemeData] that matches Primer's style guidelines for
+  /// light tritanopia themes.
+  factory PrimerThemeData.lightTritanopia() => PrimerThemeData(
+        brightness: Brightness.light,
+        foreground: Foreground.lightTritanopia(),
+        canvas: Canvas.lightTritanopia(),
+        border: Border.lightTritanopia(),
+        neutral: Neutral.lightTritanopia(),
+        accent: Accent.lightTritanopia(),
+        success: Success.lightTritanopia(),
+        attention: Attention.lightTritanopia(),
+        severe: Severe.lightTritanopia(),
+        danger: Danger.lightTritanopia(),
+        open: Open.lightTritanopia(),
+        closed: Closed.lightTritanopia(),
+        done: Done.lightTritanopia(),
+        sponsors: Sponsors.lightTritanopia(),
+      );
+
+  /// Creates a [PrimerThemeData] that matches Primer's style guidelines for
   /// dark themes.
   factory PrimerThemeData.dark() => PrimerThemeData(
         brightness: Brightness.dark,
+      );
+
+  /// Creates a [PrimerThemeData] that matches Primer's style guidelines for
+  /// high-contrast dark themes.
+  factory PrimerThemeData.highContrastDark() => PrimerThemeData(
+        brightness: Brightness.dark,
+        foreground: Foreground.darkHighContrast(),
+        canvas: Canvas.darkHighContrast(),
+        border: Border.darkHighContrast(),
+        neutral: Neutral.darkHighContrast(),
+        accent: Accent.darkHighContrast(),
+        success: Success.darkHighContrast(),
+        attention: Attention.darkHighContrast(),
+        severe: Severe.darkHighContrast(),
+        danger: Danger.darkHighContrast(),
+        open: Open.darkHighContrast(),
+        closed: Closed.darkHighContrast(),
+        done: Done.darkHighContrast(),
+        sponsors: Sponsors.darkHighContrast(),
+      );
+
+  /// Creates a [PrimerThemeData] that matches Primer's style guidelines for
+  /// colorblind-friendly dark themes.
+  factory PrimerThemeData.darkColorblind() => PrimerThemeData(
+        brightness: Brightness.dark,
+        foreground: Foreground.darkColorblind(),
+        canvas: Canvas.darkColorblind(),
+        border: Border.darkColorblind(),
+        neutral: Neutral.darkColorblind(),
+        accent: Accent.darkColorblind(),
+        success: Success.darkColorblind(),
+        attention: Attention.darkColorblind(),
+        severe: Severe.darkColorblind(),
+        danger: Danger.darkColorblind(),
+        open: Open.darkColorblind(),
+        closed: Closed.darkColorblind(),
+        done: Done.darkColorblind(),
+        sponsors: Sponsors.darkColorblind(),
+      );
+
+  /// Creates a [PrimerThemeData] that matches Primer's style guidelines for
+  /// dark tritanopia themes.
+  factory PrimerThemeData.darkTritanopia() => PrimerThemeData(
+        brightness: Brightness.dark,
+        foreground: Foreground.darkTritanopia(),
+        canvas: Canvas.darkTritanopia(),
+        border: Border.darkTritanopia(),
+        neutral: Neutral.darkTritanopia(),
+        accent: Accent.darkTritanopia(),
+        success: Success.darkTritanopia(),
+        attention: Attention.darkTritanopia(),
+        severe: Severe.darkTritanopia(),
+        danger: Danger.darkTritanopia(),
+        open: Open.darkTritanopia(),
+        closed: Closed.darkTritanopia(),
+        done: Done.darkTritanopia(),
+        sponsors: Sponsors.darkTritanopia(),
+      );
+
+  /// Creates a [PrimerThemeData] that matches Primer's style guidelines for
+  /// dimmed dark themes.
+  factory PrimerThemeData.dimmed() => PrimerThemeData(
+        brightness: Brightness.dark,
+        foreground: Foreground.dimmed(),
+        canvas: Canvas.dimmed(),
+        border: Border.dimmed(),
+        neutral: Neutral.dimmed(),
+        accent: Accent.dimmed(),
+        success: Success.dimmed(),
+        attention: Attention.dimmed(),
+        severe: Severe.dimmed(),
+        danger: Danger.dimmed(),
+        open: Open.dimmed(),
+        closed: Closed.dimmed(),
+        done: Done.dimmed(),
+        sponsors: Sponsors.dimmed(),
       );
 
   factory PrimerThemeData.fallback() => PrimerThemeData.light();
