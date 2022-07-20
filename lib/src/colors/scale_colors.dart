@@ -1,7 +1,5 @@
 import 'package:flutter/painting.dart';
 
-// TODO: high contrast, colorblind, tritanopia, & dimmed color scales - https://primer.style/primitives/colors#scale-variables
-
 /// Adds lightness to a color.
 ///
 /// See https://color2k.com/#lighten
